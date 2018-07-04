@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<div id="test">尚硅谷IT教育</div>
+
+<ul id="fragment_test">
+    <li>test1</li>
+    <li>test2</li>
+    <li>test3</li>
+</ul>
+<script type="text/javascript">
+ /*   const elementNode=document.getElementById('test')
+    const attrNode=elementNode.getAttributeNode('id')
+    console.log(attrNode);
+    const textNode=elementNode.firstChild
+    console.log(elementNode.nodeType,attrNode.nodeType,textNode.nodeType);*/
+ const fragment=document.createDocumentFragment()
+const ul=document.getElementById('fragment_test')
+    let child
+    while(child=ul.firstChild){
+     fragment.appendChild(child)
+    }
+    [].slice.call(fragment.childNodes).forEach(node=>{
+        if(node.nodeType===1){
+            node.textContent='huhuhu'
+
+        }
+    })
+    ul.appendChild(fragment)
+
+</script>
+</body>
+</html>
